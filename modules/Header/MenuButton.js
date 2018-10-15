@@ -9,7 +9,7 @@ const MenuButton = props => (
     type="button"
     onClick={props.openMenu}
   >
-    Click me
+    Open menu
   </button>
 );
 

@@ -7,6 +7,12 @@ export default (state = initialState, action) => {
     case constants.OPEN_MENU:
       return {
         ...state,
+        open: true,
+      };
+    case constants.CLOSE_MENU:
+      return {
+        ...state,
+        open: false,
       };
     default:
       return state;
