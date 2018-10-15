@@ -1,0 +1,69 @@
+{
+  "name": "scaled-fractal",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:Brianzchen/scaled-fractal.git",
+  "author": "Brian Chen <brian.chen@tabcorp.com.au>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "src",
+      "modules/*",
+      "packages/*"
+    ]
+  },
+  "engines": {
+    "node": ">=10.0.0"
+  },
+  "scripts": {
+    "lint": "eslint src packages modules",
+    "clean": "rimraf public/dist && rimraf public/index.html",
+    "uglify:css": "uglifycss public/css/styles.css > public/css/styles.min.css",
+    "uglify:html": "html-minifier --minify-css --minify-js --remove-comments --collapse-whitespace public/index.template.html -o public/index.min.html",
+    "uglify": "npm run uglify:css && npm run uglify:html",
+    "prep": "npm run clean && npm run uglify",
+    "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
+    "start": "npm run prep && webpack --config webpack/webpack.dev.js && webpack-dev-server --config webpack/webpack.dev.js",
+    "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "@babel/core": "^7.1.2",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+    "@babel/plugin-syntax-dynamic-import": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-eslint": "^10.0.1",
+    "babel-loader": "^8.0.4",
+    "babel-plugin-transform-imports": "^1.5.1",
+    "babel-plugin-transform-react-remove-prop-types": "^0.4.18",
+    "cross-env": "^5.2.0",
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jest": "^21.21.0",
+    "eslint-plugin-jsx-a11y": "^6.0.3",
+    "eslint-plugin-react": "^7.11.1",
+    "html-minifier": "^3.5.20",
+    "html-webpack-plugin": "^3.2.0",
+    "husky": "^1.1.2",
+    "rimraf": "^2.6.2",
+    "uglifycss": "^0.0.29",
+    "uglifyjs-webpack-plugin": "^2.0.1",
+    "webpack": "^4.20.2",
+    "webpack-bundle-analyzer": "^3.0.2",
+    "webpack-cli": "^3.1.2",
+    "webpack-dev-server": "^3.1.9",
+    "webpack-merge": "^4.1.4"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "post-merge": "yarn",
+      "post-checkout": "yarn"
+    }
+  }
+}

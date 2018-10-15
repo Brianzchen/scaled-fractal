@@ -1,0 +1,11 @@
+{
+  "name": "@tabdigital/header",
+  "version": "1.0.0",
+  "main": "index.js",
+  "peerDependencies": {
+    "react": "^16.0.0"
+  },
+  "devDependencies": {
+    "react": "^16.0.0"
+  }
+}
