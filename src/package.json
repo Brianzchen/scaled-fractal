@@ -3,10 +3,18 @@
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
+    "@tabdigital/events": "1.0.0",
     "@tabdigital/header": "1.0.0",
     "@tabdigital/main": "1.0.0",
     "@tabdigital/root-dom-tag": "1.0.0",
+    "connected-react-router": "^4.5.0",
+    "history": "^4.7.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
   }
 }

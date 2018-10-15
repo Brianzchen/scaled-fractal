@@ -2,9 +2,12 @@ import React from 'react';
 
 import { container } from './index.css';
 
+import MenuButton from './MenuButton';
+
 const Header = () => (
   <div className={container}>
-    a header
+    <MenuButton />
+    the rest of the header
   </div>
 );
 

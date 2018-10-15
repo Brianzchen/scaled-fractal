@@ -31,6 +31,11 @@ module.exports = {
         test: /.jsx?$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
+        include: [
+          path.resolve('./src'),
+          path.resolve('./packages'),
+          path.resolve('./modules'),
+        ],
       },
       {
         test: /\.css/,
