@@ -3,10 +3,11 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import Background from './Background';
+import MenuList from './MenuList';
 
 const Menu = props => props.open && (
   <Background>
-    test menu
+    <MenuList />
   </Background>
 );
 
