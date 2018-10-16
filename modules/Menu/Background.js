@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { closeMenu } from '@tabdigital/events/menu/actions';
+import { closeMenu } from '@site/events/menu/actions';
 
 import { background } from './Background.css';
 

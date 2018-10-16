@@ -1,4 +1,4 @@
-import * as constants from '@tabdigital/events/menu/constants';
+import * as constants from '@site/events/menu/constants';
 
 import initialState from './initialState';
 

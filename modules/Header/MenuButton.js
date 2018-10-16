@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
-import { openMenu } from '@tabdigital/events/menu/actions';
+import { openMenu } from '@site/events/menu/actions';
 
 const MenuButton = props => (
   <button

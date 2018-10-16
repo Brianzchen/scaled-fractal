@@ -6,7 +6,7 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter, connectRouter, routerMiddleware } from 'connected-react-router';
 
-import rootDomTag from '@tabdigital/root-dom-tag';
+import rootDomTag from '@site/root-dom-tag';
 
 import App from './App';
 import reducers from './reducers';

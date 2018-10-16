@@ -1,5 +1,5 @@
 {
-  "name": "@tabdigital/root-dom-tag",
+  "name": "@site/root-dom-tag",
   "version": "1.0.0",
   "main": "lib/index.js"
 }

@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '@tabdigital/header';
-import Main from '@tabdigital/main';
-import Menu from '@tabdigital/menu';
+import Header from '@site/header';
+import Main from '@site/main';
+import Menu from '@site/menu';
 
 const App = () => (
   <div>
