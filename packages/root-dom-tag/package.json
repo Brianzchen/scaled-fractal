@@ -1,12 +1,5 @@
 {
   "name": "@tabdigital/root-dom-tag",
   "version": "1.0.0",
-  "main": "lib/index.js",
-  "scripts": {
-    "test": "babel src --out-dir lib && jest"
-  },
-  "devDependencies": {
-    "@babel/cli": "^7.1.2",
-    "jest": "^23.6.0"
-  }
+  "main": "lib/index.js"
 }
