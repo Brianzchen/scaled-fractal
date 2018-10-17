@@ -149,6 +149,15 @@ To accomplish this, notice how the `@site/menu` module in, `modules/Menu` does n
 
 Though we want unified packages across the project, a child package doesn't necessarily have to be locked to the same version as the main `src` package. If you note `@site/header` and `@site/main`, these two packages use `lodash`, different versions, as well as the main `src` package not depending on lodash at all. Giving child packages the flexibility to choose their own dependency for non-critical dependencies enables packages to upgrade incrementally, which avoids many teams coordinating big bang commits often.
 
+## Style library
+The choice of a styling libraries has a few considerations. First it must scale, what this means is that, I should be able to define a set of brand attributes such as color in one location and have that cascade easily through the site.
+
+Because of this consideration, JavaScript defined css seems like the most appropriate solution. It's the current trend as of writing this, and for good reason. It allows for more programmatic styles as well being able to be defined as a simple JavaScript object that can be passed through a site.
+
+For the sake of this project I have opted for `aphrodite` as that is my styling library of choice.
+This is my preference as it mimics the simple api of standard inline styles which gives it a simple learning curve, while being injected as `<style />` blocks to be performant as well as exposing powerful css functionality that usually isn't possible with JavaScript defined css such as :hover/animations/etc.
+Though you could replace it with whatever you prefer.
+
 ## Tutorial
 
 To add a workspace dependency, run the following in the root dir
