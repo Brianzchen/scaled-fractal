@@ -114,7 +114,7 @@ As you can see from above, it is highly encouraged that you do whatever you plea
 State management is up to what your team prefers, you don't need to always make use of the redux store. Maintaining a modules internal store has a few benefits where you don't bleed data globally when only your module cares about it, and the module can be cleaned up easily if the feature is no longer required. Feel free to use setState, context, unstated, or whatever else you think fits the needs of the module.
 
 In relation to code standards within a module, feel free to override the top level .eslintrc. Don't use semi colons, use double quotes to declare strings, whatever you like think is best.
-By doing this, code standards don't belong to the company, but belong to the team maintaining the module. Though we must be careful to enforce a common code standard if changes occur to the reusable packages, such as app.
+By doing this, code standards don't belong to the company, but belong to the team maintaining the module. Though we must be careful to enforce a common code standard if changes occur to the reusable packages, such as `src` or `@site/events`.
 
 ---
 
