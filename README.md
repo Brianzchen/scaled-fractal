@@ -56,7 +56,7 @@ This is where all the parts of the ui are located.
 
 ```
 modules -
-         |- BetSlip
+         |- MenuBar
          |- Body
          |- Footer
          |- Header
@@ -64,8 +64,7 @@ modules -
          |- ...
 ```
 
-For the sake of the example I've just added a few that would be familiar.
-In the app's Main component it will create an initial structure that will render one or more of the modules, which then would cascade into other modules. Such as the SearchBar living inside the Header. The Body may consist of the BetSlip and the Footer, and later, if we receive a requirement that the same SearchBar needs to be inside the BetSlip, the BetSlip can import the SearchBar module and render it where ever it pleases.
+In the `src`'s `App` component it will create an initial structure that will render one or more of the modules, which then would cascade into other modules. Such as the SearchBar living inside the Header. The Body may consist of MenuBar and the Footer, and later, if we receive a requirement that the same SearchBar needs to be inside the MenuBar, the MenuBar can import the SearchBar module and render it where ever it pleases.
 
 Logic or state of a module can be shared through dispatching redux actions that can be used to either store data for other parts of the application to access or, to alert other modules of something occurring. Though it's important to note that usage of redux actions/store doesn't have to only be used when communicating with other modules, but can be used to reduce overhead logic of the current module or store some state for future regeneration.
 
@@ -132,7 +131,7 @@ packages -
                     | - app -
                               |actions.js
                               |constants.js
-                    | - bets -
+                    | - posts -
                               |actions.js
                               |constants.js
                     | - search -
