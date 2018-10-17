@@ -158,6 +158,8 @@ For the sake of this project I have opted for `aphrodite` as that is my styling 
 This is my preference as it mimics the simple api of standard inline styles which gives it a simple learning curve, while being injected as `<style />` blocks to be performant as well as exposing powerful css functionality that usually isn't possible with JavaScript defined css such as :hover/animations/etc.
 Though you could replace it with whatever you prefer.
 
+Although I had selected `aphrodite`, the usage of JavaScript defined css will give individual modules and teams more flexibility. The project leads may enforce a general usage of one style library, but if a team wished to experiment with another they are free to while still guaranteeing an alignment with the the site's overall user experience.
+
 ## Tutorial
 
 To add a workspace dependency, run the following in the root dir

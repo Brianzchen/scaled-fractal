@@ -14,10 +14,6 @@ module.exports = {
       aphrodite: 'aphrodite/no-important',
     },
     extensions: ['*', '.js', '.jsx', '.css'],
-    modules: [
-      path.resolve('./src'),
-      path.resolve('./node_modules'),
-    ],
   },
   plugins: [
     new HtmlWebpackPlugin({
