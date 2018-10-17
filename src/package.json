@@ -10,6 +10,7 @@
     "@site/root-dom-tag": "1.0.0",
     "connected-react-router": "^4.5.0",
     "history": "^4.7.2",
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
     "react-redux": "^5.0.7",

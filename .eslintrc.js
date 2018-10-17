@@ -1,4 +1,4 @@
-{
+module.exports = {
   "extends": "airbnb",
   "parser": "babel-eslint",
   "plugins": [
@@ -28,14 +28,7 @@
     "react/no-access-state-in-setstate": 0,
     "import/prefer-default-export": 0,
     "import/no-named-as-default": 0,
-    "import/no-extraneous-dependencies": [
-      "error",
-      {
-        "devDependencies": true,
-        "optionalDependencies": false,
-        "peerDependencies": false,
-      }
-    ],
+    "import/no-extraneous-dependencies": 0, // Turn off to allow mono-repo to import without defining common deps in respective package.json
     "import/order": [
       "error",
       {

@@ -1,14 +1,5 @@
 {
   "name": "@site/menu",
   "version": "1.0.0",
-  "main": "index.js",
-  "dependencies": {
-    "@site/events": "1.0.0",
-    "prop-types": "^15.6.2",
-    "react": "^16.0.0",
-    "react-redux": "^5.0.7"
-  },
-  "peerDependencies": {
-    "react": "^16.0.0"
-  }
+  "main": "index.js"
 }
