@@ -16,11 +16,11 @@ const config = {
       'transform-imports',
       {
         lodash: {
-          transform: 'lodash/${member}',
+          transform: 'lodash/${member}', // eslint-disable-line
           preventFullImport: true,
         },
         'react-router': {
-          transform: 'react-router/${member}',
+          transform: 'react-router/${member}', // eslint-disable-line
           preventFullImport: true,
         },
       },
