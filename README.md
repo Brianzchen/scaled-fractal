@@ -143,6 +143,13 @@ packages -
                               |constants.js
 ```
 
+## Dependency management
+When developing a scaled application with many independent pieces we must be conscious and ensure that all packages are using the same version of major dependencies.
+
+To accomplish this, notice how the `@site/menu` module in, `modules/Menu` does not have any dependencies, yet the embedded JavaScript files are freely importing dependencies such as `react` and `react-redux`. This is accomplished by the way yarn workspaces works. All dependencies are consolidated into a single `node_modules` and therefore any package in the project can import it. This is especially important with packages such as `react`, where all components in the react tree must use the same version, as well as helping to maintain a stable bundle that doesn't unintentionally duplicate packages.
+
+Though we want unified packages across the project, a child package doesn't necessarily have to be locked to the same version as the main `src` package. If you note `@site/header` and `@site/main`, these two packages use `lodash`, different versions, as well as the main `src` package not depending on lodash at all. Giving child packages the flexibility to choose their own dependency for non-critical dependencies enables packages to upgrade incrementally, which avoids many teams coordinating big bang commits often.
+
 ## Tutorial
 
 To add a workspace dependency, run the following in the root dir
