@@ -1,10 +1,20 @@
 import React from 'react';
+import { StyleSheet, css } from 'aphrodite';
 
-import { container } from './index.css';
+const styles = StyleSheet.create({
+  container: {
+    position: 'absolute',
+    top: 0,
+    left: 0,
+    bottom: 0,
+    width: '250px',
+    backgroundColor: 'white',
+  },
+});
 
 const MenuList = () => (
   <div
-    className={container}
+    className={css(styles.container)}
     onClick={e => { e.stopPropagation(); }}
   >
     list

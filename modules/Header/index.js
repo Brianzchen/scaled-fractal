@@ -1,11 +1,16 @@
 import React from 'react';
-
-import { container } from './index.css';
+import { StyleSheet, css } from 'aphrodite';
 
 import MenuButton from './MenuButton';
 
+const styles = StyleSheet.create({
+  container: {
+    backgroundColor: 'green',
+  },
+});
+
 const Header = () => (
-  <div className={container}>
+  <div className={css(styles.container)}>
     <MenuButton />
     the rest of the header
   </div>
