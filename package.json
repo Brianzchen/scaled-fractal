@@ -18,7 +18,7 @@
     "yarn": ">=1.10.0"
   },
   "scripts": {
-    "lint": "eslint src packages modules",
+    "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "clean": "rimraf public/dist && rimraf public/index.html",
