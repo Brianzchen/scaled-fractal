@@ -3,17 +3,27 @@ const path = require('path');
 const glob = require('glob');
 const md5 = require('md5');
 
+// Get working directory relative to root
 const workingDir = process.argv[2];
 const cwd = path.join(__dirname, workingDir);
 
 // Get list of files to hash
-const hashingFiles = [
-  'css/styles.min.css',
-  'scripts/fontLoader.js',
-];
+const hashingFiles = [];
+const patterns = process.argv[3].split(' ');
+patterns.forEach(pattern => {
+  const files = glob.sync(`${cwd}/**/${pattern}`);
+  hashingFiles.push(...files);
+});
+
+const getSimplePath = fileNames => fileNames.map(file => {
+  const fileArr = file.split('/');
+  return `${fileArr[fileArr.length - 1]}`;
+});
+
+const relativeHashingFiles = getSimplePath(hashingFiles);
 
 // Replace file names with hashed counterpart and store reference of hashed name
-const injectHashToFile = fileName => {
+const hashedFiles = getSimplePath(hashingFiles.map(fileName => {
   const hash = md5(fileName);
 
   const array = fileName.split('/');
@@ -27,16 +37,14 @@ const injectHashToFile = fileName => {
     hashedFileName += o;
   });
 
-  fs.rename(path.join(cwd, fileName), path.join(cwd, hashedFileName), err => {
+  fs.rename(fileName, hashedFileName, err => {
     if (err) {
       console.error('Could not rename file', err);
     }
   });
 
   return hashedFileName;
-};
-
-const hashedFiles = hashingFiles.map(o => injectHashToFile(o));
+}));
 
 // Replace file references with hashed file references
 glob(
@@ -45,6 +53,7 @@ glob(
     if (err) {
       console.error('Error', err);
     } else {
+      // Filter all dirs and keep files only
       const filteredRes = res.filter(o => {
         const arr = o.split('/');
         return arr[arr.length - 1].split('.').length >= 2;
@@ -57,7 +66,7 @@ glob(
           }
 
           hashedFiles.forEach((hashFile, i) => {
-            contents = contents.replace(new RegExp(hashingFiles[i], 'g'), hashFile); // eslint-disable-line
+            contents = contents.replace(new RegExp(relativeHashingFiles[i], 'g'), hashFile); // eslint-disable-line
           });
 
           fs.writeFile(file, contents, writeError => {

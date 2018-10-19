@@ -29,7 +29,7 @@
     "prep": "npm run clean && npm run uglify && npm run copy",
     "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
     "start": "npm run prep && webpack --config webpack/webpack.dev.js && webpack-dev-server --config webpack/webpack.dev.js",
-    "rev": "node rev.js dist",
+    "rev": "node rev.js dist 'css/* scripts/fontLoader.js'",
     "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js && npm run rev"
   },
   "dependencies": {
