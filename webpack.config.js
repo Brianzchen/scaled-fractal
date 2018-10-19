@@ -30,7 +30,7 @@ module.exports = {
         include: [
           path.resolve('./src'),
           path.resolve('./packages'),
-          path.resolve('./modules'),
+          path.resolve('./views'),
         ],
       },
     ],
