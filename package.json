@@ -9,8 +9,8 @@
   "workspaces": {
     "packages": [
       "src",
-      "modules/*",
-      "packages/*"
+      "packages/*",
+      "views/*"
     ]
   },
   "engines": {
