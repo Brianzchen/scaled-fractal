@@ -1,1 +1,5 @@
-export default {};
+import testingService from './testingService';
+
+export default {
+  testingService,
+};

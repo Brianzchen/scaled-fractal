@@ -1,5 +1,9 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
+
+import { getStuff } from '@site/core/prompter/actions';
 
 const styles = StyleSheet.create({
   container: {
@@ -12,13 +16,27 @@ const styles = StyleSheet.create({
   },
 });
 
-const MenuList = () => (
+const MenuList = props => (
   <div
     className={css(styles.container)}
     onClick={e => { e.stopPropagation(); }}
   >
     list
+    <button
+      type="button"
+      onClick={props.getStuff}
+    >
+      Click me
+    </button>
   </div>
 );
 
-export default MenuList;
+MenuList.propTypes = {
+  getStuff: PropTypes.func.isRequired,
+};
+
+const mapDispatchToProps = {
+  getStuff,
+};
+
+export default connect(undefined, mapDispatchToProps)(MenuList);
