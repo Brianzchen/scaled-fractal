@@ -35,7 +35,6 @@ This will serve as the entry point for the site, where major integration points 
 ```
 src -
      |- App
-     |- reducers
      |- services
      |index.js
      |package.json
@@ -43,9 +42,6 @@ src -
 ```
 
 `Main` - This will be the root react component that will form the tree structure of the dom and cascade into further modules and form the structure of the site.
-
-`reducers` - This directory will house our list of reducers, and their initial states. When building our reducers, we will aim to have many, and each of them with a clean cut purpose.
-Though the service is not nested inside the store, the intention is that as mentioned above, the store will be initiated with the service as a thunk param. This would mean that to make service requests, a module would have to go through an action creator. This has two benefits, first is that it defines a clear and single way to request or send data to the backend, and second, consistently accessing the service through an action creator would mean that the module itself would not need knowledge of all the service params to pass through, it would pass what it can, and then the thunk can provide the rest from the single store instance. This also has the added benefit that an api can evolve, and if the component calling the action does not have all the necessary params, the thunk can easily define a default value for it.
 
 `services` - This will be where all the site's server requests will live, keeping all server requests in one location is good because in the future, it will be to easy troubleshoot, as well as if there is ever a time when our service requires instantiation like requiring an api key or something similar we have the infrastructure to support it.
 
