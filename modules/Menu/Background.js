@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
-import { closeMenu } from '@site/events/menu/actions';
+import { closeMenu } from '@site/core/menu/actions';
 
 const styles = StyleSheet.create({
   background: {

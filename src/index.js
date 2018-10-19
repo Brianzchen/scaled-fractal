@@ -6,10 +6,10 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter, connectRouter, routerMiddleware } from 'connected-react-router';
 
+import core from '@site/core';
 import rootDomTag from '@site/root-dom-tag';
 
 import App from './App';
-import reducers from './reducers';
 import service from './service';
 
 // Create history object for tracking routes
@@ -29,7 +29,7 @@ const startApp = () => {
   );
 
   const store = createStore(
-    connectRouter(history)(reducers),
+    connectRouter(history)(core),
     composeEnhancers(
       applyMiddleware(...middleware),
     ),

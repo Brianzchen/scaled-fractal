@@ -1,6 +1,5 @@
-import * as constants from '@site/events/menu/constants';
-
 import initialState from './initialState';
+import * as constants from './constants';
 
 export default (state = initialState, action) => {
   switch (action.type) {
