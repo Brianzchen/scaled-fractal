@@ -4,10 +4,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: path.resolve(__dirname, 'src/index.js'),
   output: {
-    path: path.resolve(__dirname, 'public/dist/'),
+    path: path.resolve(__dirname, 'dist/scripts'),
     filename: '[contenthash].index.js',
     chunkFilename: '[contenthash].[name].chunk.js',
-    publicPath: '/dist/',
+    publicPath: '/scripts/',
   },
   resolve: {
     alias: {
@@ -17,8 +17,8 @@ module.exports = {
   },
   plugins: [
     new HtmlWebpackPlugin({
-      filename: path.resolve(__dirname, 'public/index.html'),
-      template: path.resolve(__dirname, 'public/index.min.html'),
+      filename: path.resolve(__dirname, 'dist/index.html'),
+      template: path.resolve(__dirname, 'public/index.html'),
     }),
   ],
   module: {

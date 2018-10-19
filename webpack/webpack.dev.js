@@ -10,7 +10,7 @@ const config = merge(common, {
   },
   devtool: 'inline-source-map',
   devServer: {
-    contentBase: path.join(__dirname, '../public'),
+    contentBase: path.join(__dirname, '../dist'),
     watchContentBase: true,
     port: '3000',
     open: true,

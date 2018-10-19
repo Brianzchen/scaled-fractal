@@ -21,14 +21,16 @@
     "lint": "eslint .",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
-    "clean": "rimraf public/dist && rimraf public/index.html",
+    "clean": "rimraf dist && rimraf public/index.html && rimraf public/css/styles.min.css",
     "uglify:css": "uglifycss public/css/styles.css > public/css/styles.min.css",
-    "uglify:html": "html-minifier --minify-css --minify-js --remove-comments --collapse-whitespace public/index.template.html -o public/index.min.html",
+    "uglify:html": "html-minifier --minify-css --minify-js --remove-comments --collapse-whitespace public/index.template.html -o public/index.html",
     "uglify": "npm run uglify:css && npm run uglify:html",
-    "prep": "npm run clean && npm run uglify",
+    "copy": "copyfiles -u 1 public/css/styles.min.css public/scripts/* public/manifest.json public/robots.txt dist",
+    "prep": "npm run clean && npm run uglify && npm run copy",
     "analyze": "npm run clean && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
     "start": "npm run prep && webpack --config webpack/webpack.dev.js && webpack-dev-server --config webpack/webpack.dev.js",
-    "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js"
+    "rev": "node rev.js dist",
+    "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js && npm run rev"
   },
   "dependencies": {
     "@babel/core": "^7.1.2",
@@ -57,6 +59,7 @@
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.1.2",
     "jest": "^23.6.0",
+    "md5": "^2.2.1",
     "rimraf": "^2.6.2",
     "uglifycss": "^0.0.29",
     "uglifyjs-webpack-plugin": "^2.0.1",
