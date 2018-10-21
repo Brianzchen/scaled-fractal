@@ -52,30 +52,30 @@ glob(
   (err, res) => {
     if (err) {
       console.error('Error', err);
-    } else {
-      // Filter all dirs and keep files only
-      const filteredRes = res.filter(o => {
-        const arr = o.split('/');
-        return arr[arr.length - 1].split('.').length >= 2;
-      });
+    }
 
-      filteredRes.forEach(file => {
-        fs.readFile(file, 'utf8', (error, contents) => {
-          if (error) {
-            console.error('Could not read file', err);
-          }
+    // Filter all dirs and keep files only
+    const filteredRes = res.filter(o => {
+      const arr = o.split('/');
+      return arr[arr.length - 1].split('.').length >= 2;
+    });
 
-          hashedFiles.forEach((hashFile, i) => {
+    filteredRes.forEach(file => {
+      fs.readFile(file, 'utf8', (error, contents) => {
+        if (error) {
+          console.error('Could not read file', err);
+        }
+
+        hashedFiles.forEach((hashFile, i) => {
             contents = contents.replace(new RegExp(relativeHashingFiles[i], 'g'), hashFile); // eslint-disable-line
-          });
+        });
 
-          fs.writeFile(file, contents, writeError => {
-            if (writeError) {
-              console.error('Could not write file');
-            }
-          });
+        fs.writeFile(file, contents, writeError => {
+          if (writeError) {
+            console.error('Could not write file');
+          }
         });
       });
-    }
+    });
   },
 );
