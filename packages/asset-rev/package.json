@@ -1,0 +1,15 @@
+{
+  "name": "asset-rev",
+  "version": "1.0.0",
+  "description": "append hash to assets and updates references in each file specified",
+  "main": "rev.js",
+  "author": "Brian Chen",
+  "license": "MIT",
+  "bin": {
+    "asset-rev": "rev.js"
+  },
+  "dependencies": {
+    "app-root-path": "^2.1.0",
+    "md5": "^2.2.1"
+  }
+}

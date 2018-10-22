@@ -1,11 +1,13 @@
+#!/usr/bin/env node
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
 const md5 = require('md5');
+const appRootPath = require('app-root-path');
 
 // Get working directory relative to root
 const workingDir = process.argv[2];
-const cwd = path.join(__dirname, workingDir);
+const cwd = path.join(appRootPath.path, workingDir);
 
 // Get list of files to hash
 const hashingFiles = [];
@@ -45,6 +47,8 @@ const hashedFiles = getSimplePath(hashingFiles.map(fileName => {
 
   return hashedFileName;
 }));
+
+console.log(hashedFiles);
 
 // Replace file references with hashed file references
 glob(
