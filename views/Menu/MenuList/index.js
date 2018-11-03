@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
 const MenuList = props => (
   <div
     className={css(styles.container)}
-    onClick={e => { e.stopPropagation(); }}
+    onClick={(e) => { e.stopPropagation(); }}
   >
     list
     <button

@@ -4,7 +4,7 @@ import { createStore, applyMiddleware, compose } from 'redux';
 import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
-import { ConnectedRouter, connectRouter, routerMiddleware } from 'connected-react-router';
+import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 
 import core from '@site/core';
 import rootDomTag from '@site/root-dom-tag';
@@ -29,7 +29,7 @@ const startApp = () => {
   );
 
   const store = createStore(
-    connectRouter(history)(core),
+    core(history),
     composeEnhancers(
       applyMiddleware(...middleware),
     ),
@@ -52,7 +52,7 @@ const startApp = () => {
 // Check if the process is production mode and if it is not
 // do not include redux logger into the build
 if (process.env.NODE_ENV !== 'production') {
-  import(/* webpackChunkName: "logger" */ 'redux-logger').then(module => {
+  import(/* webpackChunkName: "logger" */ 'redux-logger').then((module) => {
     middleware.push(
       module.createLogger({
         collapsed: true,
