@@ -43,10 +43,15 @@ const startApp = () => {
     </Provider>
   );
 
-  ReactDOM.render(
-    <Main />,
-    document.getElementById(rootDomTag),
-  );
+  const domNode = document.getElementById(rootDomTag);
+  if (domNode) {
+    ReactDOM.render(
+      <Main />,
+      domNode,
+    );
+  } else {
+    console.error(`Element id ${rootDomTag} could not be found`);
+  }
 };
 
 // Check if the process is production mode and if it is not
