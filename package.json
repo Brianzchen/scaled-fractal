@@ -19,6 +19,7 @@
   },
   "scripts": {
     "lint": "eslint .",
+    "flow": "flow",
     "test": "cross-env NODE_ENV=test jest",
     "test:watch": "cross-env NODE_ENV=test jest --watch",
     "clean": "rimraf dist && rimraf public/index.html && rimraf public/css/styles.min.css",
@@ -38,6 +39,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0",
     "@babel/preset-env": "^7.1.0",
+    "@babel/preset-flow": "^7.0.0",
     "@babel/preset-react": "^7.0.0",
     "asset-rev": "^0.1.7",
     "babel-core": "^7.0.0-bridge",
@@ -51,10 +53,12 @@
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-import-resolver-webpack": "^0.10.1",
+    "eslint-plugin-flowtype": "^3.2.0",
     "eslint-plugin-import": "^2.14.0",
     "eslint-plugin-jest": "^21.21.0",
     "eslint-plugin-jsx-a11y": "^6.0.3",
     "eslint-plugin-react": "^7.11.1",
+    "flow-bin": "^0.85.0",
     "html-minifier": "^3.5.20",
     "html-webpack-plugin": "^3.2.0",
     "husky": "^1.1.2",
@@ -70,7 +74,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "npm run lint",
+      "pre-commit": "npm run lint && npm run flow && npm test",
       "post-merge": "yarn",
       "post-checkout": "yarn"
     }

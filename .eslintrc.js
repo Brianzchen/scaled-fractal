@@ -1,9 +1,10 @@
 module.exports = {
-  "extends": "airbnb",
+  "extends": ["airbnb", 'plugin:flowtype/recommended'],
   "parser": "babel-eslint",
   "plugins": [
     "react",
     "jest",
+    'flowtype',
   ],
   "env": {
     "browser": true,
@@ -12,6 +13,9 @@ module.exports = {
   },
   "settings": {
     "import/resolver": "webpack",
+    "flowtype": {
+      "onlyFilesWithFlowAnnotation": true
+    },
   },
   "rules": {
     "function-paren-newline": ["error", "consistent"],
