@@ -1,11 +1,14 @@
 // @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 
 import { openMenu } from '@site/core/menu/actions';
 
-const MenuButton = props => (
+type Props = {
+  openMenu: Function,
+};
+
+const MenuButton = (props: Props) => (
   <button
     type="button"
     onClick={props.openMenu}
@@ -13,10 +16,6 @@ const MenuButton = props => (
     Open menu
   </button>
 );
-
-MenuButton.propTypes = {
-  openMenu: PropTypes.func.isRequired,
-};
 
 const mapDispatchToProps = {
   openMenu,

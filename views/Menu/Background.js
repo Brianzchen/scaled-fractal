@@ -1,9 +1,14 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+// @flow
+import * as React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
 import { closeMenu } from '@site/core/menu/actions';
+
+type Props = {
+  children: React.Node,
+  closeMenu: Function,
+};
 
 const styles = StyleSheet.create({
   background: {
@@ -16,7 +21,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Background = props => (
+const Background = (props: Props) => (
   <div
     className={css(styles.background)}
     onClick={props.closeMenu}
@@ -24,11 +29,6 @@ const Background = props => (
     {props.children}
   </div>
 );
-
-Background.propTypes = {
-  children: PropTypes.node.isRequired,
-  closeMenu: PropTypes.func.isRequired,
-};
 
 const mapDispatchToProps = {
   closeMenu,

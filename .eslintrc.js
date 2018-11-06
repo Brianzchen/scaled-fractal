@@ -25,10 +25,8 @@ module.exports = {
     "jsx-a11y/no-static-element-interactions": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "jsx-a11y/label-has-for": 0,
-    "react/forbid-prop-types": [1, { "forbid": ['any', 'array'] }],
-    "react/jsx-filename-extension": ["error", { "extensions": [".js", ".jsx"] }],
+    "react/jsx-filename-extension": ["error", { "extensions": [".js"] }],
     "react/destructuring-assignment": 0,
-    "react/no-access-state-in-setstate": 0,
     "import/prefer-default-export": 0,
     "import/no-named-as-default": 0,
     "import/no-extraneous-dependencies": 0, // Turn off to allow mono-repo to import without defining common deps in respective package.json

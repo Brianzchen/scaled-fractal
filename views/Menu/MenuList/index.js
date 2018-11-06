@@ -1,9 +1,13 @@
+// @flow
 import React from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
 import { getStuff } from '@site/core/prompter/actions';
+
+type Props = {
+  getStuff: Function
+};
 
 const styles = StyleSheet.create({
   container: {
@@ -16,7 +20,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const MenuList = props => (
+const MenuList = (props: Props) => (
   <div
     className={css(styles.container)}
     onClick={(e) => { e.stopPropagation(); }}
@@ -30,10 +34,6 @@ const MenuList = props => (
     </button>
   </div>
 );
-
-MenuList.propTypes = {
-  getStuff: PropTypes.func.isRequired,
-};
 
 const mapDispatchToProps = {
   getStuff,
