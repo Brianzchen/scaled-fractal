@@ -37,8 +37,4 @@ if (process.env.NODE_ENV !== 'test') {
   ];
 }
 
-if (process.env.NODE_ENV === 'production') {
-  config.plugins.push('transform-react-remove-prop-types');
-}
-
 module.exports = config;
