@@ -7,18 +7,17 @@ import thunk from 'redux-thunk';
 import { createBrowserHistory } from 'history';
 import { ConnectedRouter, routerMiddleware } from 'connected-react-router';
 
-import core from '@site/core';
-import rootDomTag from '@site/root-dom-tag';
+import reducers from '@core/reducers';
+import rootDomTag from '@pkgs/root-dom-tag';
 
 import App from './App';
-import service from './service';
 
 // Create history object for tracking routes
 const history = createBrowserHistory();
 
 // Create middleware required for all builds
 const middleware = [
-  thunk.withExtraArgument(service),
+  thunk,
   routerMiddleware(history),
 ];
 
@@ -30,7 +29,7 @@ const startApp = () => {
   );
 
   const store = createStore(
-    core(history),
+    reducers(history),
     composeEnhancers(
       applyMiddleware(...middleware),
     ),

@@ -1,8 +1,8 @@
 {
-  "name": "@site/header",
+  "name": "@views/main",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {
-    "lodash": "^4.17.11"
+    "lodash": "4.17.5"
   }
 }

@@ -2,7 +2,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 
-import { openMenu } from '@site/core/menu/actions';
+import { openMenu } from '@core/reducers/menu/actions';
 
 type Props = {
   openMenu: Function,

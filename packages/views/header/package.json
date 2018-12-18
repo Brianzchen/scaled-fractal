@@ -1,5 +1,5 @@
 {
-  "name": "@site/core",
+  "name": "@views/header",
   "version": "1.0.0",
   "main": "index.js",
   "dependencies": {

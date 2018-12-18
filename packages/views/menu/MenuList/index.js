@@ -3,7 +3,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
-import { getStuff } from '@site/core/prompter/actions';
+import { getStuff } from '@core/reducers/prompter/actions';
 
 type Props = {
   getStuff: Function

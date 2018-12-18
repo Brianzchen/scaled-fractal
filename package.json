@@ -8,9 +8,7 @@
   "private": true,
   "workspaces": {
     "packages": [
-      "src",
-      "packages/*",
-      "views/*"
+      "packages/*/*"
     ]
   },
   "engines": {
@@ -34,6 +32,23 @@
     "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js && npm run rev"
   },
   "dependencies": {
+    "@core/reducers": "1.0.0",
+    "@pkgs/root-dom-tag": "1.0.0",
+    "@views/header": "1.0.0",
+    "@views/main": "1.0.0",
+    "@views/menu": "1.0.0",
+    "aphrodite": "^2.2.3",
+    "connected-react-router": "^6.0.0",
+    "history": "^4.7.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-redux": "^6.0.0",
+    "react-router": "^4.3.1",
+    "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
+    "redux-thunk": "^2.3.0"
+  },
+  "devDependencies": {
     "@babel/core": "^7.1.2",
     "@babel/plugin-proposal-class-properties": "^7.1.0",
     "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
@@ -49,6 +64,8 @@
     "babel-plugin-transform-imports": "^1.5.1",
     "copyfiles": "^2.1.0",
     "cross-env": "^5.2.0",
+    "enzyme": "^3.7.0",
+    "enzyme-adapter-react-16": "^1.6.0",
     "eslint": "^5.7.0",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-import-resolver-webpack": "^0.10.1",

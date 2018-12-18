@@ -1,8 +1,8 @@
 import React from 'react';
 
-import Header from '@site/header';
-import Main from '@site/main';
-import Menu from '@site/menu';
+import Header from '@views/header';
+import Main from '@views/main';
+import Menu from '@views/menu';
 
 const App = () => (
   <div>

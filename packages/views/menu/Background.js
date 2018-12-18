@@ -3,7 +3,7 @@ import * as React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
-import { closeMenu } from '@site/core/menu/actions';
+import { closeMenu } from '@core/reducers/menu/actions';
 
 type Props = {
   children: React.Node,
