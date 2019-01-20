@@ -12,11 +12,11 @@ The disadvantage of mono-repo packages would be that they will be version agnost
 
 ## Structure outline
 
-Below is a basic representation of the root project structure. `bootstrap` will be the starting point, which will do nothing more than simply pulling in redux and react and starting the connection to render the initial site, whereas `packages` is the root for mono-repo packages, this will help with splitting our concerns, and we'll get into why that's the case a bit later.
+Below is a basic representation of the root project structure. `frame` will be the starting point, which will do nothing more than simply pulling in redux and react and starting the connection to render the initial site, whereas `packages` is the root for mono-repo packages, this will help with splitting our concerns, and we'll get into why that's the case a bit later.
 
 ```
 www-tab -
-         |- bootstrap
+         |- frame
          |- packages
          |- public
          |.eslintrc
@@ -29,7 +29,7 @@ www-tab -
 
 ### Explaining the 3 major directories
 
-### `bootstrap`
+### `frame`
 This will serve as the entry point for the site, where major integration points with the site gets instantiated. Think of it as anything that must be single instance or have it's single instance created, will live here.
 
 ```
@@ -105,7 +105,7 @@ As you can see from above, it is highly encouraged that you do whatever you plea
 State management is up to what your team prefers, you don't need to always make use of the redux store. Maintaining a modules internal store has a few benefits where you don't bleed data globally when only your module cares about it, and the module can be cleaned up easily if the feature is no longer required. Feel free to use setState, context, unstated, or whatever else you think fits the needs of the module.
 
 In relation to code standards within a module, feel free to override the top level .eslintrc. Don't use semi colons, use double quotes to declare strings, whatever you like think is best.
-By doing this, code standards don't belong to the coperation, but instead the team maintaining the module. Though we must be careful to enforce a common code standard if changes occur to the reusable areas, such as `bootstrap` or `@core/reducers`.
+By doing this, code standards don't belong to the coperation, but instead the team maintaining the module. Though we must be careful to enforce a common code standard if changes occur to the reusable areas, such as `frame` or `@core/reducers`.
 
 ---
 

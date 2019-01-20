@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
-  entry: path.resolve(__dirname, 'bootstrap/index.js'),
+  entry: path.resolve(__dirname, 'frame/index.js'),
   output: {
     path: path.resolve(__dirname, 'dist/scripts'),
     filename: '[contenthash].index.js',
@@ -28,7 +28,7 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         include: [
-          path.resolve('./bootstrap'),
+          path.resolve('./frame'),
           path.resolve('./packages'),
         ],
       },
