@@ -8,11 +8,11 @@ The goal here is to create a structure where we don't have so much dependency co
 
 The mono-repo structure, uses yarn to achieve this. This allows us to separate our project into separate npm packages thus allowing each module to be independent in it's dependencies while also being in the same repo to allow for quick code enhancements.
 
-The disadvantage of mono-repo packages would be that they will be version agnostic to their sibling packages. Though this is not a concern to our modules since any updates we make to a module in the mono-repo should be applied immediately to the main site.
+The disadvantage of mono-repo packages would be that they're version agnostic to their sibling packages. Forunately this is not a concern to our modules since any updates we make to a module in the mono-repo should be applied immediately to the main site.
 
 ## Structure outline
 
-Below is a basic representation of the root project structure. `frame` will be the starting point, which will do nothing more than simply pulling in redux and react and starting the connection to render the initial site, whereas `packages` is the root for mono-repo packages, this will help with splitting our concerns, and we'll get into why that's the case a bit later.
+Below is a basic representation of the root project structure. `frame` will be the starting point, which will do nothing more than simply pulling in `redux` and `react` and starting the connection to render the initial site, whereas `packages` is the root for mono-repo packages, this will help with splitting our concerns, and we'll get into why that's the case a bit later.
 
 ```
 www-tab -
