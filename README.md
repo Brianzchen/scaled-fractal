@@ -6,7 +6,7 @@ Fractal based design pattern for large scaled applications with many teams.
 
 The goal here is to create a structure where we don't have so much dependency coupling that would otherwise stop one of our site's modules to upgrade without also upgrading the rest of the site all in one go.
 
-The mono-repo structure, uses yarn achieve this. This allows us to separate our project into separate npm packages thus allowing each module to be independent in it's dependencies while also being in the same repo to allow for quick code enhancements.
+The mono-repo structure, uses yarn to achieve this. This allows us to separate our project into separate npm packages thus allowing each module to be independent in it's dependencies while also being in the same repo to allow for quick code enhancements.
 
 The disadvantage of mono-repo packages would be that they will be version agnostic to their sibling packages. Though this is not a concern to our modules since any updates we make to a module in the mono-repo should be applied immediately to the main site.
 
