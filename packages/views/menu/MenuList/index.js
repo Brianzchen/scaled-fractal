@@ -3,10 +3,10 @@ import React from 'react';
 import { connect } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
-import { getStuff } from '@core/reducers/prompter/actions';
+import { doStuff } from '@core/reducers/prompter/actions';
 
 type Props = {
-  getStuff: Function
+  doStuff: Function
 };
 
 const styles = StyleSheet.create({
@@ -28,7 +28,7 @@ const MenuList = (props: Props) => (
     list
     <button
       type="button"
-      onClick={props.getStuff}
+      onClick={props.doStuff}
     >
       Click me
     </button>
@@ -36,7 +36,7 @@ const MenuList = (props: Props) => (
 );
 
 const mapDispatchToProps = {
-  getStuff,
+  doStuff,
 };
 
 export default connect(undefined, mapDispatchToProps)(MenuList);
