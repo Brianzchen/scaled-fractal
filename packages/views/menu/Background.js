@@ -1,37 +1,36 @@
 // @flow
 import * as React from 'react';
-import { connect } from 'react-redux';
+import { useDispatch } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
 import { closeMenu } from '@core/reducers/menu/actions';
 
 type Props = {
   children: React.Node,
-  closeMenu: Function,
 };
 
-const styles = StyleSheet.create({
-  background: {
-    position: 'fixed',
-    top: 0,
-    right: 0,
-    bottom: 0,
-    left: 0,
-    backgroundColor: '#444444',
-  },
-});
+const Background = (props: Props): React.Node => {
+  const dispatch = useDispatch();
 
-const Background = (props: Props) => (
-  <div
-    className={css(styles.background)}
-    onClick={props.closeMenu}
-  >
-    {props.children}
-  </div>
-);
+  const styles = StyleSheet.create({
+    background: {
+      position: 'fixed',
+      top: 0,
+      right: 0,
+      bottom: 0,
+      left: 0,
+      backgroundColor: '#444444',
+    },
+  });
 
-const mapDispatchToProps = {
-  closeMenu,
+  return (
+    <div
+      className={css(styles.background)}
+      onClick={dispatch(closeMenu())}
+    >
+      {props.children}
+    </div>
+  );
 };
 
-export default connect(undefined, mapDispatchToProps)(Background);
+export default Background;

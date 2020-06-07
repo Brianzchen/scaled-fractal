@@ -1,42 +1,38 @@
 // @flow
-import React from 'react';
-import { connect } from 'react-redux';
+import * as React from 'react';
+import { useDispatch } from 'react-redux';
 import { StyleSheet, css } from 'aphrodite';
 
 import { doStuff } from '@core/reducers/prompter/actions';
 
-type Props = {
-  doStuff: Function
-};
+const MenuList = (): React.Node => {
+  const dispatch = useDispatch();
 
-const styles = StyleSheet.create({
-  container: {
-    position: 'absolute',
-    top: 0,
-    left: 0,
-    bottom: 0,
-    width: '250px',
-    backgroundColor: 'white',
-  },
-});
+  const styles = StyleSheet.create({
+    container: {
+      position: 'absolute',
+      top: 0,
+      left: 0,
+      bottom: 0,
+      width: '250px',
+      backgroundColor: 'white',
+    },
+  });
 
-const MenuList = (props: Props) => (
-  <div
-    className={css(styles.container)}
-    onClick={(e) => { e.stopPropagation(); }}
-  >
-    list
-    <button
-      type="button"
-      onClick={props.doStuff}
+  return (
+    <div
+      className={css(styles.container)}
+      onClick={(e) => { e.stopPropagation(); }}
     >
-      Click me
-    </button>
-  </div>
-);
-
-const mapDispatchToProps = {
-  doStuff,
+      list
+      <button
+        type="button"
+        onClick={dispatch(doStuff())}
+      >
+        Click me
+      </button>
+    </div>
+  );
 };
 
-export default connect(undefined, mapDispatchToProps)(MenuList);
+export default MenuList;

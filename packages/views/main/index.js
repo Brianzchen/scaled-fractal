@@ -1,6 +1,7 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
-const Main = () => (
+const Main = (): React.Node => (
   <div>
     this is the main
   </div>

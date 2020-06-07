@@ -1,4 +1,5 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 import { StyleSheet, css } from 'aphrodite';
 
 import MenuButton from './MenuButton';
@@ -9,7 +10,7 @@ const styles = StyleSheet.create({
   },
 });
 
-const Header = () => (
+const Header = (): React.Node => (
   <div className={css(styles.container)}>
     <MenuButton />
     the rest of the header

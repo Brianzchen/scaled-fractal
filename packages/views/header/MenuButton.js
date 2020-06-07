@@ -1,24 +1,20 @@
 // @flow
-import React from 'react';
-import { connect } from 'react-redux';
+import * as React from 'react';
+import { useDispatch } from 'react-redux';
 
 import { openMenu } from '@core/reducers/menu/actions';
 
-type Props = {
-  openMenu: Function,
+const MenuButton = (): React.Node => {
+  const dispatch = useDispatch();
+
+  return (
+    <button
+      type="button"
+      onClick={dispatch(openMenu())}
+    >
+      Open menu
+    </button>
+  );
 };
 
-const MenuButton = (props: Props) => (
-  <button
-    type="button"
-    onClick={props.openMenu}
-  >
-    Open menu
-  </button>
-);
-
-const mapDispatchToProps = {
-  openMenu,
-};
-
-export default connect(undefined, mapDispatchToProps)(MenuButton);
+export default MenuButton;

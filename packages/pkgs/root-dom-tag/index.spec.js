@@ -1,3 +1,4 @@
+// @flow
 import rootDomTag from '.';
 
 describe('rootDomTag', () => {
