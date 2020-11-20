@@ -9,8 +9,11 @@
 [libs]
 
 [lints]
+deprecated-type=error
+deprecated-utility=error
 
 [options]
 exact_by_default=true
+include_warnings=true
 
 [strict]
