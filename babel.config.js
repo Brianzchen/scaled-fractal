@@ -10,9 +10,6 @@ const config = {
     '@babel/preset-flow',
   ],
   plugins: [
-    '@babel/plugin-proposal-object-rest-spread',
-    '@babel/plugin-syntax-dynamic-import',
-    '@babel/plugin-proposal-class-properties',
     [
       'transform-imports',
       {
@@ -21,7 +18,7 @@ const config = {
           preventFullImport: true,
         },
         'react-router': {
-          transform: 'react-router/${member}', // eslint-disable-line
+          transform: 'react-router-dom/${member}', // eslint-disable-line
           preventFullImport: true,
         },
       },

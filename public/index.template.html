@@ -15,35 +15,15 @@
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" type="image/png" href="#" />
 
-    <!-- CSS lazy loading -->
-    <script>
-      var stylesheet1 = document.createElement('link');
-      stylesheet1.rel = 'stylesheet';
-      stylesheet1.href = '/css/styles.min.css';
-      stylesheet1.type = 'text/css';
-      var godefer = document.getElementsByTagName('link')[0];
-      godefer.parentNode.insertBefore(stylesheet1, godefer);
-    </script>
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="/css/styles.min.css" />
 
     <!-- Fonts -->
-    <script>
-      [
-        'https://ajax.googleapis.com/ajax/libs/webfont/1.6.26/webfont.js',
-        '/scripts/fontLoader.js',
-      ].forEach(function(src) {
-        var script = document.createElement('script');
-        script.src = src;
-        script.async = false;
-        document.head.appendChild(script);
-      });
-    </script>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
   </head>
   <body>
     <noscript>
-      <!-- Main css fallback -->
-      <link rel="stylesheet" type="text/css" href="/css/styles.min.css" />
-      <!-- Font loader fallback -->
-      <link href="https://fonts.googleapis.com/css?family=Noto+Sans" rel="stylesheet">
       <style>
         #no-js {
           position: fixed;

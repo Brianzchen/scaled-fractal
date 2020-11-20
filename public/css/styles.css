@@ -1,16 +1,16 @@
 * {
   font-size: 16px;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  box-sizing: border-box;
 }
 
 html,  body,  #root {
   margin: 0;
   height: 100%;
-  overflow: hidden;
 }
 
 input, textarea, body {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   box-sizing: border-box;
 }

@@ -1,15 +1,11 @@
 import React from 'react';
 
-import Header from '@views/header';
-import Main from '@views/main';
-import Menu from '@views/menu';
+import { Box } from '@pkgs/components';
 
 const App = () => (
-  <div>
-    <Header />
-    <Main />
-    <Menu />
-  </div>
+  <Box>
+    Scaled fractal
+  </Box>
 );
 
 export default App;
