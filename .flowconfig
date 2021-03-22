@@ -13,7 +13,9 @@ deprecated-type=error
 deprecated-utility=error
 
 [options]
+autoimports=true
 exact_by_default=true
+format.single_quotes=true
 include_warnings=true
 
 [strict]
