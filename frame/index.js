@@ -18,6 +18,7 @@ const history = createBrowserHistory();
 // Create middleware required for all builds
 const middleware = [
   thunk,
+  thunk.withExtraArgument(''),
   routerMiddleware(history),
 ];
 

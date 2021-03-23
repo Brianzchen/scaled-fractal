@@ -1,8 +1,9 @@
-import React from 'react';
+// @flow
+import * as React from 'react';
 
 import { Box } from '@pkgs/components';
 
-const App = () => (
+const App = (): React.Node => (
   <Box>
     Scaled fractal
   </Box>
