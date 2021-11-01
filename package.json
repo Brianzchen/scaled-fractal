@@ -26,7 +26,7 @@
     "copy": "copyfiles -u 1 public/css/styles.min.css public/scripts/* public/manifest.json public/robots.txt dist",
     "prep": "npm run clean && npm run uglify && npm run copy",
     "analyze": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.analyze.js",
-    "start": "npm run prep && webpack --config webpack/webpack.dev.js && webpack serve --config webpack/webpack.dev.js",
+    "start": "npm run prep && webpack --config webpack/webpack.dev.js && webpack-dev-server --config webpack/webpack.dev.js",
     "build": "npm run prep && cross-env NODE_ENV=production webpack --config webpack/webpack.prod.js"
   },
   "dependencies": {
@@ -71,13 +71,13 @@
     "jest": "^26.6.3",
     "lint-staged": "^9.1.0",
     "rimraf": "^2.6.2",
-    "terser-webpack-plugin": "^5.0.3",
+    "terser-webpack-plugin": "^1.2.2",
     "uglifycss": "^0.0.29",
-    "webpack": "^5.6.0",
-    "webpack-bundle-analyzer": "^4.1.0",
-    "webpack-cli": "^4.2.0",
+    "webpack": "^4.16.0",
+    "webpack-bundle-analyzer": "^3.0.0",
+    "webpack-cli": "^3.0.8",
     "webpack-dev-server": "^3.11.0",
-    "webpack-merge": "^5.4.0"
+    "webpack-merge": "^4.2.0"
   },
   "husky": {
     "hooks": {
