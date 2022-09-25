@@ -34,7 +34,7 @@
     "@pkgs/components": "1.0.0",
     "@pkgs/root-dom-tag": "1.0.0",
     "aphrodite": "^2.4.0",
-    "connected-react-router": "^6.8.0",
+    "connected-react-router": "6.9.3",
     "history": "^5.0.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
